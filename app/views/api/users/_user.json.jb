@@ -1,0 +1,9 @@
+{
+ id: user.id,
+ first_name: user.first_name,
+ last_name: user.last_name,
+ brokerage: user.brokerage,
+ email: user.email,
+ phone: user.phone,
+ type: user.type,
+}
