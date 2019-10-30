@@ -1,0 +1,7 @@
+{
+  id: interest.id,
+  buyer_id: interest.buyer_id,
+  property_id: interest.property_id,
+  rating: interest.rating,
+  notes: interest.notes
+}

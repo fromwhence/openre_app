@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_143621) do
+ActiveRecord::Schema.define(version: 2019_10_30_180513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_10_29_143621) do
     t.integer "property_id"
     t.integer "rating"
     t.text "notes"
-    t.bit "active", limit: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active"
   end
 
   create_table "open_houses", force: :cascade do |t|

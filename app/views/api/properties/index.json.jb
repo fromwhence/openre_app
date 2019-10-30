@@ -1,0 +1,3 @@
+@properties.each do |property|
+  render partial: "property.json.jb", locals: {property: property}
+end

@@ -1,0 +1,12 @@
+{
+  id: realtor.id,
+  first_name: realtor.first_name,
+  last_name: realtor.last_name,
+  brokerage: realtor.brokerage,
+  email: realtor.email,
+  phone: realtor.phone,
+  password: realtor.password,
+  password_confirmation: realtor.password_confirmation,
+  properties: realtor.properties,
+  open_houses: realtor.open_houses
+}

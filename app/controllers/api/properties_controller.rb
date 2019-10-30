@@ -1,4 +1,10 @@
 class Api::PropertiesController < ApplicationController
+
+  def index
+    @properties = Property.all
+    render 'index.json.jb'
+  end
+
   def create
     @property = Property.new(
                             realtor_id: params[:realtor_id],
@@ -13,6 +19,11 @@ class Api::PropertiesController < ApplicationController
                             description: params[:description],
                             listing_url: params[:listing_url]
                           )
+    if @property.save
+      render json: {message: 'Property created successfully'}, status: :created
+    else
+      render json: {errors: @property.errors.full_messages}, status: :bad_request
+    end
   end
 
   def show
@@ -42,7 +53,7 @@ class Api::PropertiesController < ApplicationController
 
   def destroy
     @property = Property.find(params[:id])
-    @product.destroy
+    @property.destroy
     render json: {message: "Successfully Destroyed Property."}  
   end
 

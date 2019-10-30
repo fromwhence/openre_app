@@ -1,0 +1,1 @@
+render partial: "buyer.json.jb", locals: {buyer: @buyer}

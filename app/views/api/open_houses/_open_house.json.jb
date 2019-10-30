@@ -1,0 +1,6 @@
+{
+  id: open_house.id,
+  property_id: open_house.property_id,
+  start_time: open_house.start_time,
+  end_time: open_house.end_time
+}
