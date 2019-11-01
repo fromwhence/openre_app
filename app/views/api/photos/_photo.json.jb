@@ -1,5 +1,5 @@
 {
   id: photo.id,
   property_id: photo.property_id,
-  url: photo.url
+  image_urls: photo.image_urls
 }

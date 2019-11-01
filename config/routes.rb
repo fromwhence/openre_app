@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   post "/realtors" => "realtors#create"
   get "/realtors/:id" => "realtors#show"
   patch "/realtors/:id" => "realtors#update"
-  delete "/realtors/:id" => "realtor#destroy"
+  delete "/realtors/:id" => "realtors#destroy"
 
   post "/sessions" => "sessions#create"
 

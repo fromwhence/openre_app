@@ -5,8 +5,7 @@
   brokerage: realtor.brokerage,
   email: realtor.email,
   phone: realtor.phone,
-  password: realtor.password,
-  password_confirmation: realtor.password_confirmation,
-  properties: realtor.properties,
+  photo_url: realtor.photo_url,
+  # properties: realtor.properties, create .map
   open_houses: realtor.open_houses
 }

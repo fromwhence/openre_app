@@ -1,1 +1,1 @@
-render partial: "open_house.json.jb", locals: {property: @property}
+render partial: "open_house.json.jb", locals: {open_house: @open_house}

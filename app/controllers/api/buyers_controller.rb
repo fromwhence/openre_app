@@ -2,14 +2,14 @@ class Api::BuyersController < ApplicationController
 
   def create
     @buyer = User.new(
-                    first_name: params[:first_name],
-                    last_name: params[:last_name],
-                    email: params[:email],
-                    phone: params[:phone],
-                    type: params[:type],
-                    password: params[:password],
-                    password_confirmation: params[:password_confirmation]
-                    )
+                      first_name: params[:first_name],
+                      last_name: params[:last_name],
+                      email: params[:email],
+                      phone: params[:phone],
+                      type: params[:type],
+                      password: params[:password],
+                      password_confirmation: params[:password_confirmation]
+                      )
 
     if @buyer.save
       render json: {message: 'User created successfully'}, status: :created
@@ -29,7 +29,6 @@ class Api::BuyersController < ApplicationController
     @buyer.last_name = params[:last_name] || @buyer.last_name
     @buyer.email = params[:email] || @buyer.email
     @buyer.phone = params[:phone] || @buyer.phone
-    @buyer.type = params[:type] || @buyer.type
     @buyer.password = params[:password] || @buyer.password
 
     if @buyer.save
@@ -42,7 +41,7 @@ class Api::BuyersController < ApplicationController
   def destroy
     @buyer = User.find(params[:id])
     @buyer.destroy
-    render json: {message: "successfully Destroyed Buyer"}
+    render json: {message: "Successfully Destroyed Buyer"}
   end
 
 end

@@ -2,5 +2,16 @@
   id: open_house.id,
   property_id: open_house.property_id,
   start_time: open_house.start_time,
-  end_time: open_house.end_time
+  end_time: open_house.end_time,
+  realtor: {
+    id: open_house.realtor.id,
+    first_name: open_house.realtor.first_name,
+    last_name: open_house.realtor.last_name,
+    brokerage: open_house.realtor.brokerage,
+    email: open_house.realtor.email,
+    phone: open_house.realtor.phone,
+    photo_url: open_house.realtor.photo_url
+  }
+  # property: (render partial: "api/properties/property.json.jb", locals: {property: open_house.property})
+  # photos: photos.image_urls.map { |image| render partial: "api/photos/photo.json.jb", locals: {photos: photos}}
 }

@@ -2,7 +2,14 @@ class Api::OpenHousesController < ApplicationController
 
   def index
     @open_houses = OpenHouse.all
+    
+    # search_term = params[:search]
+    #   if search_term
+    #     @open_house = @open_houses.where("address iLIKE ?", "%#{search_term}%")
+    #   end
+      
     render 'index.json.jb'
+
   end
 
   def create
