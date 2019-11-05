@@ -1,3 +1,3 @@
-@interests.each do |interest|
+@interests.map do |interest|
   render partial: "interest.json.jb", locals: {interest: interest}
 end

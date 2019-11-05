@@ -1,3 +1,3 @@
-@open_houses.each do |open_house|
+@open_houses.map do |open_house|
   render partial: "open_house.json.jb", locals: {open_house: open_house}
 end

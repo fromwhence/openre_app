@@ -4,9 +4,6 @@
   last_name: buyer.last_name,
   email: buyer.email,
   phone: buyer.phone,
-  password: buyer.password,
-  password_confirmation: buyer.password_confirmation,
-  interests: buyer.interests,
-  properties: buyer.properties,
-  open_houses: buyer.open_houses
+  open_houses: buyer.open_houses,
+  interests: buyer.interests
 }

@@ -1,5 +1,10 @@
 class Api::RealtorsController < ApplicationController
 
+  def index
+    @realtors = Realtor.all
+    render 'index.json.jb'
+  end
+
   def create
     @realtor = Realtor.new(
                         first_name: params[:first_name],

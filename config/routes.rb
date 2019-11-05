@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   patch "/buyers/:id" => "buyers#update"
   delete "/buyers/:id" => "buyers#destroy"
 
+  get "/realtors" => "realtors#index"
   post "/realtors" => "realtors#create"
   get "/realtors/:id" => "realtors#show"
   patch "/realtors/:id" => "realtors#update"

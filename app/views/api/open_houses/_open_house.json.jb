@@ -11,7 +11,18 @@
     email: open_house.realtor.email,
     phone: open_house.realtor.phone,
     photo_url: open_house.realtor.photo_url
+  },
+  property: {
+    mls_number: open_house.property.mls_number,
+    price: open_house.property.price,
+    home_category: open_house.property.home_category,
+    address: open_house.property.address,
+    bedrooms: open_house.property.bedrooms,
+    baths: open_house.property.baths,
+    square_footage: open_house.property.square_footage,
+    year_built: open_house.property.year_built,
+    description: open_house.property.description,
+    listing_url: open_house.property.listing_url,
+    photos: open_house.property.photos.map { |photo| render partial: "api/photos/photo.json.jb", locals: {photo: photo}}
   }
-  # property: (render partial: "api/properties/property.json.jb", locals: {property: open_house.property})
-  # photos: photos.image_urls.map { |image| render partial: "api/photos/photo.json.jb", locals: {photos: photos}}
 }

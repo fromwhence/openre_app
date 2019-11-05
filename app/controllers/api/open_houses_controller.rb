@@ -1,15 +1,14 @@
 class Api::OpenHousesController < ApplicationController
 
   def index
-    @open_houses = OpenHouse.all
+    @open_houses = OpenHouse.all   
     
-    # search_term = params[:search]
-    #   if search_term
-    #     @open_house = @open_houses.where("address iLIKE ?", "%#{search_term}%")
-    #   end
-      
-    render 'index.json.jb'
+    search_term = params[:search]
+      if search_term
+        @open_houses = OpenHouse.joins(:property).where("properties.address iLIKE ?", "%#{search_term}%")
+      end 
 
+    render 'index.json.jb'   
   end
 
   def create
@@ -27,7 +26,8 @@ class Api::OpenHousesController < ApplicationController
 
   def show
     @open_house = OpenHouse.find(params[:id])
-    render 'show.json.jb'  
+    render 'show.json.jb'
+
   end
 
   def update

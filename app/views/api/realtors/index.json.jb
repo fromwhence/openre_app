@@ -1,0 +1,3 @@
+@realtors.map do |realtor|
+  render partial: "realtor.json.jb", locals: {realtor: realtor}
+end

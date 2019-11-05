@@ -10,5 +10,7 @@
   square_footage: property.square_footage,
   year_built: property.year_built,
   description: property.description,
-  listing_url: property.listing_url
+  listing_url: property.listing_url,
+  photos: property.photos.map { |photo| render partial: "api/photos/photo.json.jb", locals: {photo: photo}
+  }
 }
