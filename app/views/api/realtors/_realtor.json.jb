@@ -5,6 +5,7 @@
   brokerage: realtor.brokerage,
   email: realtor.email,
   phone: realtor.phone,
+  photo_url: realtor.photo_url,
   properties: realtor.properties,
   open_houses: realtor.open_houses
 }

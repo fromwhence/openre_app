@@ -4,5 +4,5 @@ class Property < ApplicationRecord
   belongs_to :realtor
   has_many :interests
   has_many :buyers, through: :interests
-  enum category: {single_family: 0, condo: 1, townhome: 2, multi_family: 3}
+  enum home_category: {single_family: 0, condo: 1, townhome: 2, multi_family: 3}
 end

@@ -4,9 +4,29 @@ class Api::OpenHousesController < ApplicationController
     @open_houses = OpenHouse.all   
     
     search_term = params[:search]
+
       if search_term
-        @open_houses = OpenHouse.joins(:property).where("properties.address iLIKE ?", "%#{search_term}%")
-      end 
+        @open_houses = OpenHouse.joins(:property).where("properties.address iLIKE ?", "%#{search_term}")
+      end
+
+      if search_term
+        @open_houses = OpenHouse.joins(:property).where("properties.home_category iLIKE ?", "%#{search_term}")
+      end
+
+      if search_term
+        @open_houses = OpenHouse.where("open_houses.start_time iLIKE ?", "%#{search_term}%")
+      end
+
+      # if search_term
+      #   @open_houses = @open_houses.where("open_houses.properties.address iLIKE ?", "%#{search_term}%")
+      # end
+
+      # if search_term
+      #   @open_houses = OpenHouse.joins(:property).where("start_time iLIKE ? AND properties.address iLIKE ? OR properties.home_category iLIKE ?",
+      #     "%#{search_term}%",
+      #     "%#{search_term}%",
+      #     "%#{search_term}%"
+      # )
 
     render 'index.json.jb'   
   end
@@ -17,6 +37,7 @@ class Api::OpenHousesController < ApplicationController
                                 start_time: params[:start_time],
                                 end_time: params[:end_time]
                                 )
+
     if @open_house.save
       render json: {message: 'Open house created successfully'}, status: :created
     else
