@@ -15,7 +15,10 @@
   property: {
     mls_number: open_house.property.mls_number,
     price: open_house.property.price,
-    home_category: open_house.property.home_category,
+    formatted: {
+                home_category: open_house.property.formatted_home_category,
+                home_category_number: open_house.property.home_category_number
+              },
     address: open_house.property.address,
     bedrooms: open_house.property.bedrooms,
     baths: open_house.property.baths,
