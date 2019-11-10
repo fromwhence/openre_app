@@ -14,4 +14,8 @@ class Property < ApplicationRecord
   	Property.home_categories[home_category]
   end
 
+  def friendly_price
+    price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+  end
+
 end

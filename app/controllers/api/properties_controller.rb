@@ -1,4 +1,10 @@
 class Api::PropertiesController < ApplicationController
+  before_action :authenticate_user, only: [:create, :destroy]
+
+  # def index
+  #   @properties = current_user.properties
+  #   render 'index.json.jb'
+  # end
 
   def index
     @properties = Property.all

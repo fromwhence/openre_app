@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
                     brokerage: params[:brokerage],
                     email: params[:email],
                     phone: params[:phone],
+                    photo_url: params[:photo_url],
                     type: params[:type],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation]

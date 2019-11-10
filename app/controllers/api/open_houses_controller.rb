@@ -3,23 +3,24 @@ class Api::OpenHousesController < ApplicationController
   def index
     @open_houses = OpenHouse.all   
     
-    search_zip = params[:zip]
-    search_category = params[:category]
-    search_date = params[:date]
+    search_zip = params[:zip] || ""
+    search_category = params[:category] || ""
+    search_date = params[:date] || ""
 
-      if search_zip
-        @open_houses = OpenHouse.joins(:property).where("properties.address iLIKE ?", "%#{search_zip}")
-      end
+    @open_houses = OpenHouse.joins(:property)
 
-      if search_category
-        @open_houses = OpenHouse.joins(:property).where("properties.home_category = ?", search_category)
-      end
+    if search_zip != ""
+      @open_houses = @open_houses.where("properties.address iLIKE ?", "%#{search_zip}")
+    end
 
-      if search_date
-        @open_houses = OpenHouse.where("start_time >= ? AND start_time <= ?", "%#{search_date} 00:00:00", "%#{search_date} 23:59:59")
-      end
+    if search_category != ""
+      @open_houses = @open_houses.where("properties.home_category = ?", search_category)
+    end
 
-      
+    if search_date != ""
+      @open_houses = @open_houses.where("open_houses.start_time >= ? AND open_houses.start_time <= ?", "#{search_date} 00:00:00", "#{search_date} 23:59:59")
+    end
+
 
     render 'index.json.jb'
   end

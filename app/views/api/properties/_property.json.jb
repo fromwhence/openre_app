@@ -3,7 +3,7 @@
   realtor_id: property.realtor_id,
   mls_number: property.mls_number,
   home_category: property.home_category,
-  price: property.price,
+  friendly_price: property.friendly_price,
   address: property.address,
   bedrooms: property.bedrooms,
   baths: property.baths,

@@ -7,5 +7,5 @@
   phone: realtor.phone,
   photo_url: realtor.photo_url,
   properties: realtor.properties,
-  open_houses: realtor.open_houses
+  open_houses: realtor.open_houses.map { |open_house| render partial: "api/open_houses/open_house.json.jb", locals: {open_house: open_house}}
 }

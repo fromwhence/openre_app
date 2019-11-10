@@ -1,8 +1,8 @@
 {
   id: open_house.id,
   property_id: open_house.property_id,
-  start_time: open_house.start_time,
-  end_time: open_house.end_time,
+  friendly_start_time: open_house.friendly_start_time,
+  friendly_end_time: open_house.friendly_end_time,
   realtor: {
     id: open_house.realtor.id,
     first_name: open_house.realtor.first_name,
@@ -14,7 +14,7 @@
   },
   property: {
     mls_number: open_house.property.mls_number,
-    price: open_house.property.price,
+    friendly_price: open_house.property.friendly_price,
     formatted: {
                 home_category: open_house.property.formatted_home_category,
                 home_category_number: open_house.property.home_category_number
