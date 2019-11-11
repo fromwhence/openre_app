@@ -7,10 +7,11 @@
   address: property.address,
   bedrooms: property.bedrooms,
   baths: property.baths,
-  square_footage: property.square_footage,
+  friendly_square_footage: property.friendly_square_footage,
   year_built: property.year_built,
   description: property.description,
   listing_url: property.listing_url,
+  default_image_url: property.default_image_url,
   photos: property.photos.map { |photo| render partial: "api/photos/photo.json.jb", locals: {photo: photo}
   }
 }

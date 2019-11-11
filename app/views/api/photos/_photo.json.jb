@@ -1,5 +1,6 @@
 {
   id: photo.id,
   property_id: photo.property_id,
-  image_url: photo.image_url
+  image_url: photo.image_url,
+  default_preference: photo.default_preference
 }

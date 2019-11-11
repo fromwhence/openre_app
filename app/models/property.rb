@@ -18,4 +18,12 @@ class Property < ApplicationRecord
     price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
   end
 
+  def friendly_square_footage
+   square_footage.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+  end
+
+  def default_image_url
+    default_photo = photos.find_by(default_preference: true)
+    default_photo ? default_photo.image_url : ""
+  end
 end

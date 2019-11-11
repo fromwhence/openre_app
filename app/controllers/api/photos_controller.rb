@@ -8,7 +8,8 @@ end
 def create
   @photo = Photo.new(
                       property_id: params[:property_id],
-                      image_url: params[:image_url]
+                      image_url: params[:image_url],
+                      default_preference: params[:default_preference]
                       )
   if @photo.save
     render json: {message: 'Photo created successfully'}, status: :created
@@ -25,7 +26,8 @@ end
 def update
   @photo = Photo.find(params[:id])
   @photo.property_id = params[:property_id] || @photo.property_id
-  @photo.image_url = params[:image_url] || @photo.url
+  @photo.image_url = params[:image_url] || @photo.image_url
+  @photo.default_preference = params[:default_preference] || @photo.default_preference
 
   if @photo.save
     render 'show.json.jb'
