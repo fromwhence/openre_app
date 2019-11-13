@@ -5,11 +5,11 @@ class OpenHouse < ApplicationRecord
   has_many :buyers, through: :interests
 
   def friendly_start_time
-  	start_time.strftime("%a. %m/%d %l%P-")
+  	start_time.strftime("%a. %m/%d, %l%P-")
   end
 
   def friendly_end_time
-  	end_time.strftime("%l%P")
+  	end_time.strftime("%l%P").gsub(" ","")
   end
 
   # end
